@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SkoHub – KOS-based content syndication</title>
+
+		<meta name="description" content="Presentation at SWIB19, Hamburg on 2019-11-27">
+		<meta name="author" content="Adrian Pohl">
+		<meta name="author" content="Felix Ostrowski">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"type": "PresentationDigitalDocument",
+			"name" : "SkoHub – KOS-based content syndication",
+			"creator" : [{
+				"id": "http://lobid.org/team/ap#!",
+				"type": "Person",
+				"name": "Adrian Pohl"
+			},
+			{
+				"type": "Person",
+				"name": "Felix Ostrowski"
+			}
+		],
+			"description": "Presentation at SWIB19, Hamburg on 2019-11-27",
+			"about" : [ "SkoHub", "ActivityPub", "content syndication", "Knowledge Organization Systems", "SKOS"],
+			"url" : "https://slides.lobid.org/skohub-swib19/",
+			"datePublished" : "2019-11-27",
+			"inLanguage" : "en",
+			"audience": [ "librarians", "developers" ],
+			"license": "https://creativecommons.org/licenses/by/4.0/"
+		}
+		</script>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/hbz.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			pre { white-space: pre-wrap; }
+			#footer-left {
+				position: absolute;
+				bottom: 1%;
+				left: 0.5%;
+				color: lightgray;
+				font-family: sans-serif;
+			}
+		</style>
+	</head>
+<div id="footer-left"></div>
+  <body>
+    <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h2>SkoHub –</h2>
+				<h3>KOS-based content syndication</h3>
+        <p>
+          <small>
+            <a href="http://lobid.org/team/ap#!">Adrian Pohl</a>
+						(<a href="https://twitter.com/acka47">@acka47</a>), <a href="https://www.hbz-nrw.de/produkte/linked-open-data">Hochschulbibliothekszentrum NRW (hbz)</a> <br />
+						<a href="http://lobid.org/team/pc#!">Felix Ostrowski</a>
+						(<a href="https://twitter.com/literarymachine">@literarymachine</a>),
+						<a href="http://graphthinking.com/">graphthinking GmbH</a> </small> <br /><br />
+          <small>Hamburg, 2019-11-27</small>
+        </p>
+        <p>
+          This presentation: <br /> <a
+            href="http://slides.lobid.org/skohub-swib19/">http://slides.lobid.org/skohub-swib19/</a>
+          <br/>
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/cc-by.png" title="Licensed under a Creative Commons Attribution 4.0 International License"></a>
+        </p>
+      </section>
+
+     </div>
+
+   </div>
+   <script src="lib/js/head.min.js"></script>
+   <script src="js/reveal.js"></script>
+
+   <script>
+			Reveal.addEventListener('adrian', function() { document.querySelector('#footer-left').innerHTML = 'A'; } );
+			Reveal.addEventListener('pascal', function() { document.querySelector('#footer-left').innerHTML = 'P'; } )
+			Reveal.addEventListener('alle', function() { document.querySelector('#footer-left').innerHTML = 'A & P'; } );
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+
+       transition: 'none', // none/fade/slide/convex/concave/zoom
+       backgroundTransition: 'none',
+			 slideNumber: 'c', // 'c/t'
+			 hashOneBasedIndex: true,
+
+       // Optional reveal.js plugins
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+
+   </script>
+
+  </body>
+</html>
