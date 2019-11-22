@@ -10,10 +10,11 @@ slideOptions:
 # SkoHub:
 ## KOS-based content syndication with ActivityPub
 
-<small>Adrian Pohl ( [@acka47]()), hbz &
-    Felix Ostrowski ([@literarymachine](https://twitter.com/literarymachine)), graphthinking GmbH)</small>
+<small>Adrian Pohl ([@acka47]()), hbz &
+    Felix Ostrowski ([@literarymachine](https://twitter.com/literarymachine)), graphthinking GmbH</small>
 
 <small>SWIB19, Hamburg, 2019-11-27</small>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" width="120px" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" title="Licensed under a Creative Commons Attribution 4.0 International License"></a>
 
 ---
 
@@ -23,45 +24,52 @@ slideOptions:
 ---
 
 ## Open Educational Resources (OER)
-- various resource types: from task sheets to simulations & software
+- various resource types: from task sheets to textbooks to simulations & software
 - anything text-based, audio, video, interactive
 - published on different platforms on the web: video platforms, homepages, slide platforms, wikis, repositories etc.
 
 ---
 
-## Possible approaches
+## Possible approach
 - set up OER repos
-- harvest data via OA-PMH
+- upload / re-publish content there
+- harvest data via OAI-PMH
 - normalize data and index into discovery services
-- offer "information competence" courses so that people know how to use our infrastructure
+- tell people where to go for search
+
 
 ---
 
-## No, not again
+## No. Not again.
 
 ---
 
-## Why not?
+## Why not? Drawbacks of a repo approach
 - only resources in repos are covered, not elswhere on the web
-- Users have to know where to find your service to start searching
-- The approach is "off the web"
+- users have to know where to find your service to start searching
+- it's repository-centric & "off the web"
+- we have little technical debt with OER & the chance to try out something new
 
 ---
 
 
 ### Repository-centric, not web-centric
-> <small>Conceptually, we have come to see [OAI-PMH] as repository-centric instead of resource-centric or web-centric. It has its starting point in the repository, which is considered to be the center of the universe. Interoperability is framed in terms of the repository, rather than in terms of the web and its primitives. This kind of repository, although it resides on the web, hinders seamless access to its content because it does not fully embrace the ways of the web.</small>
+> <span style="font-size:28px;">Conceptually, we have come to see [OAI-PMH] as repository-centric instead of resource-centric or web-centric. It has its starting point in the repository, which is considered to be the center of the universe. Interoperability is framed in terms of the repository, rather than in terms of the web and its primitives. This kind of repository, although it resides on the web, hinders seamless access to its content because it does not fully embrace the ways of the web.</span>
 
 <small>– [Van de Sompel/Nelson 2015](https://dx.doi.org/10.1045/november2015-vandesompel)</small>
 
 ---
 
-## How could a web-centric or resource-centric approach to discovery like?
+## How could a web-centric or resource-centric approach to discovery look like?
 
 ---
 
 ## Make it subject-oriented
 ## & start with shared domain models
+
+Note:
+  Sollen wir hier und unten wirklich von "domain models" sprechen? Oder besser "KOS", "classification"?
+  FO: Würde nicht von "domain models" sprechen - KOS ist doch ok?
 
 ---
 
@@ -71,7 +79,15 @@ slideOptions:
 
 ---
 
-## We build something,
+## Enter SkoHub
+
+- Software *and* a Service
+- Software: https://github.com/topics/skohub (six modules)
+- Service: https://skohub.io
+
+---
+
+## We prepared something,
 ## let's demo
 
 ---
@@ -104,11 +120,14 @@ slideOptions:
 
 ---
 
-### SkoHub Editor: Describing web content & notify followers of a subject
-- Use SkoHub Editor to describe a web resource
+### SkoHub Editor: Describing web content & send notifications
+- use SkoHub Editor to describe a web resource
 - Notify followers of a subject by adding it to the description
 - Editor is configured & input validated with JSON schema
 - Metadata is published to inbox of assigned subjects & then distributed to followers
+
+Note:
+  Ideally, OER publishers will implement notifications when publishing a resource, for now we are using a SkoHub Editor-based browser add-on.
 
 ----
 
@@ -122,22 +141,93 @@ slideOptions:
 
 ----
 
-## Push information to interested people
-<span>
-    <h3>Based on which criterion?</h3>
-</span>
+<img src="https://github.com/hbz/slides/blob/swib19-skohub/skohub-swib19/img/notification-toot.png?raw=true" alt="A notification toot in mastodon" width=600 style="border: none; box-shadow: none;" />
+<small>Followers of subjects will receive notification</small>
+
+----
+
+```json
+{
+   "id":"https://test.skohub.io/m/e3a4ca4a-23ee-4de2-a07f-fd3e03f465b8",
+   "type":"Note",
+   "name":"SkoHub – KOS-based content syndication with ActivityPub",
+   "url":"https://pad.gwdg.de/p/BJvl5sFiB#/",
+   "content":"<p>SkoHub – KOS-based content syndication with ActivityPub: <a href=\"https://pad.gwdg.de/p/BJvl5sFiB#/\" rel=\"nofollow noopener\" target=\"_blank\">https://pad.gwdg.de/p/BJvl5sFiB#/</a></p>",
+   "attachment":{
+      "name":"SkoHub – KOS-based content syndication with ActivityPub",
+      "id":"https://pad.gwdg.de/p/BJvl5sFiB#/",
+      "description":"Presentation at SWIB19 in Hamburg, 2019-11-27",
+      "type":"PresentationDigitalDocument",
+      "creator":[
+         {
+            "type":"Person",
+            "id":"http://lobid.org/team/ap#!",
+            "name":"Adrian Pohl"
+         },
+         {
+            "type":"Person",
+            "name":"Felix Ostrowski",
+            "id":"https://github.com/literarymachine"
+         }
+      ],
+      "about":[
+         {
+            "id":"https://w3id.org/class/esc/n06",
+            "prefLabel":{
+               "en":"Information and Communication Technologies (ICTs)"
+            },
+            "type":"Concept",
+            "inScheme":{
+               "id":"https://w3id.org/class/esc/scheme"
+            }
+         }
+      ],
+      "license":{
+         "id":"https://oerworldmap.org/assets/json/licenses/cc-by",
+         "prefLabel":{
+            "en":"Creative Commons Attribution",
+            "de":"Creative Commons Namensnennung"
+         },
+         "type":"Concept",
+         "inScheme":{
+            "id":"https://oerworldmap.org/assets/json/licenses/"
+         }
+      },
+      "image":"https://github.com/hbz/slides/blob/swib19-skohub/skohub-swib19/img/slides-screenshot.png?raw=true"
+   }
+}
+```
+<small>The [payload](https://test.skohub.io/m/e3a4ca4a-23ee-4de2-a07f-fd3e03f465b8) of the notification with full resource description attached</small>
 
 
 ---
 
-## Fully open
-- Free software
-- based in open web standards
-- anybody can develop additional clients
+## Social requirements for successful SkoHub use
+- agreement on shared domain models
+- agreement on schema for resource description
+- (to do set up a professional forum for agreements in the German-speaking world, there is another project calls "[StöberSpecs](https://wiki.dnb.de/x/nso8CQ)")
 
 ---
 
-## Other use cases
+## Fully open, decentralized approach
+- fully based on open web standards: [Linked Data Notifications](https://www.w3.org/TR/ldn/), [ActivityPub](http://activitypub.rocks/)
+- modularized: we invite you to use the pubsub server together with e.g. Skosmos
+- Create your own clients: clients are views, decoupled from the data (https://ruben.verborgh.org/blog/2017/12/20/paradigm-shifts-for-the-decentralized-web/#apps-become-views)
 
-- communicate updates (corrections, additions) for a concept, see Ilik/Koster 2019
-- 
+Note:
+  Ich weiß noch nicht, wie wir das kurz und knapp abhandeln. Vielleicht mit einem Verweis auf Ruben o.ä.
+
+---
+
+## Using SkoHub for communicating KOS changes
+- as SkoHub provides a generic infrastructure, it might be used for other purposes e.g.
+- communicate updates (corrections, additions) for a subject, person entry etc, see Ilik/Koster 2019
+- any ideas?
+
+---
+
+## References
+
+de Sompel, Herbert Van / Nelson, Michael L. (2015): Reminiscing About 15 Years of Interoperability Efforts. D-Lib Magazine 21 , no. 11/12. DOI: [10.1045/november2015-vandesompel](https://doi.org/10.1045/november2015-vandesompel)
+
+Ilik, Violeta / Koster, Lukas (2019): Information-Sharing Pipeline, The Serials Librarian, DOI: [10.1080/0361526X.2019.1583045](https://doi.org/10.1080/0361526X.2019.1583045). Preprint: [https://doi.org/10.31219/osf.io/hbwf8](https://doi.org/10.31219/osf.io/hbwf8)
