@@ -26,17 +26,16 @@ slideOptions:
 ## Open Educational Resources (OER)
 - various resource types: from task sheets to textbooks to simulations & software
 - anything text-based, audio, video, interactive
-- published on different platforms on the web: video platforms, homepages, slide platforms, wikis, repositories etc.
+- published all over the web: video or slide platforms, homepages, wikis, repositories etc.
 
 ---
 
 ## Possible approach
 - set up OER repos
-- upload / re-publish content there
+- ask people to upload / re-publish content there
 - harvest data via OAI-PMH
 - normalize data and index into discovery services
 - tell people where to go for search
-
 
 ---
 
@@ -51,7 +50,6 @@ slideOptions:
 - we have little technical debt with OER & the chance to try out something new
 
 ---
-
 
 ### Repository-centric, not web-centric
 > <span style="font-size:28px;">Conceptually, we have come to see [OAI-PMH] as repository-centric instead of resource-centric or web-centric. It has its starting point in the repository, which is considered to be the center of the universe. Interoperability is framed in terms of the repository, rather than in terms of the web and its primitives. This kind of repository, although it resides on the web, hinders seamless access to its content because it does not fully embrace the ways of the web.</span>
@@ -73,7 +71,7 @@ Note:
 
 ---
 
-![](http://slides.lobid.org/kmk-oer/img/oeglobal2018_topic-orientation.png)
+![Screenshot saying "To drive OER adoption, communities of practice are key. Topic-oriented technology can help foster them."](http://slides.lobid.org/kmk-oer/img/oeglobal2018_topic-orientation.png)
 
 <small>Paul Gobee/Pim Bellinga (2018): [TOOLs. Topic-Oriented Open Learning platforms](https://schd.ws/hosted_files/oeglobal2018/5b/Topic%20Oriented%20Open%20Learning_TOOL_platforms_a%20novel%20approach%20for%20open%20education%20%E2%80%93%20experiences%20of%20two%20initiativesoeglobal18_tool_presentation_asPresented.pdf), presentation at OE Global 2018, Delft.</small>
 
@@ -81,22 +79,23 @@ Note:
 
 ## Enter SkoHub
 
-- Software *and* a Service
-- Software: https://github.com/topics/skohub (six modules)
-- Service: https://skohub.io
+- a project by hbz & graphthinking funded by the federal state of North-Rhine Westphalia
+- second phase to make software production-ready just started
+- software *and* a service
+- software: https://github.com/topics/skohub (four modules)
+- service: https://skohub.io
 
 ---
 
-## We prepared something,
-## let's demo
+## Let's demo
 
 ---
 
 ### SkoHub Vocabs: Managing and publishing domain models as SKOS vocabs on the web
-1. Publish SKOS vocab as turtle file on GitHub (GitLab integration is in the works)
-2. Set up webhook
-3. Vocab is published as HTML/JSON-LD via skohub.io
-4. Each concept is also an ActivityPub actor (`Service`) that you can follow
+1. publish SKOS vocab as turtle file on GitHub (GitLab integration is in the works)
+2. set up webhook
+3. vocab is published as HTML/JSON-LD via skohub.io
+4. each concept is also an ActivityPub actor (`Service`) that you can follow
 
 ----
 
@@ -115,16 +114,16 @@ Note:
 
 ----
 
-<img src="https://github.com/hbz/slides/blob/swib19-skohub/skohub-swib19/img/follow-topic.png?raw=true" alt="The published ESC vocab as HTML view on skohub.io" width=700 style="border: none; box-shadow: none;" />
+<img src="https://github.com/hbz/slides/blob/swib19-skohub/skohub-swib19/img/follow-topic.png?raw=true" alt="Creenshot of following SKOS concept in Mastodon" width=700 style="border: none; box-shadow: none;" />
 <small>Follow a subject using Mastodon</small>
 
 ---
 
 ### SkoHub Editor: Describing web content & send notifications
 - use SkoHub Editor to describe a web resource
-- Notify followers of a subject by adding it to the description
-- Editor is configured & input validated with JSON schema
-- Metadata is published to inbox of assigned subjects & then distributed to followers
+- notify followers of a subject by adding it to the description
+- editor is configured & input validated with JSON schema
+- metadata is published to inbox of assigned subjects & then distributed to followers
 
 Note:
   Ideally, OER publishers will implement notifications when publishing a resource, for now we are using a SkoHub Editor-based browser add-on.
@@ -199,7 +198,6 @@ Note:
 ```
 <small>The [payload](https://test.skohub.io/m/e3a4ca4a-23ee-4de2-a07f-fd3e03f465b8) of the notification with full resource description attached</small>
 
-
 ---
 
 ## Social requirements for successful SkoHub use
@@ -211,8 +209,8 @@ Note:
 
 ## Fully open, decentralized approach
 - fully based on open web standards: [Linked Data Notifications](https://www.w3.org/TR/ldn/), [ActivityPub](http://activitypub.rocks/)
-- modularized: we invite you to use the pubsub server together with e.g. Skosmos
-- Create your own clients: clients are views, decoupled from the data (https://ruben.verborgh.org/blog/2017/12/20/paradigm-shifts-for-the-decentralized-web/#apps-become-views)
+- modularized: we invite you to use the pubsub server together with your vocabs publishing solution
+- create your own clients: clients are views, decoupled from the data (https://ruben.verborgh.org/blog/2017/12/20/paradigm-shifts-for-the-decentralized-web/#apps-become-views)
 
 Note:
   Ich weiß noch nicht, wie wir das kurz und knapp abhandeln. Vielleicht mit einem Verweis auf Ruben o.ä.
@@ -220,9 +218,18 @@ Note:
 ---
 
 ## Using SkoHub for communicating KOS changes
-- as SkoHub provides a generic infrastructure, it might be used for other purposes e.g.
+as SkoHub provides a generic infrastructure, it might be used for other purposes e.g.:
+- communicate new publications by a person based on their authority record
 - communicate updates (corrections, additions) for a subject, person entry etc, see Ilik/Koster 2019
 - any ideas?
+
+---
+
+## Get involved!
+
+- Homepage: https:///skohub.io
+- Blog: http://blog.lobid.org/tags/skohub
+- Mailing list: tba
 
 ---
 
